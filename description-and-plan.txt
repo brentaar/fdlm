@@ -18,6 +18,9 @@ Stage 1:
 		bare essentails to work
 	upload.php
 		Send a system command to start python script
+		check to see if the file already exists with md5
+		add the statisitic of the download to the mysql database
+		
 	fdlmMySQL database
 		3 table
 			1: file internet statistics
@@ -45,3 +48,9 @@ later Stages:
 		Support for cURL with stop and resume
 		Simple python priorities
 			stop a download that is less important to start one with more importants
+		start a torrent instances if there is a torrent extension
+	fdlm.rss
+		add a rss feeder that can give statistics about down
+		say when a download has started
+		say when finished
+		say if there was an error
