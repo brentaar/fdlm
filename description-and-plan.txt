@@ -1,0 +1,47 @@
+This program is to be used as a way to get files to a home server from a remote location.
+It will also help manage downloaded files to help remove duplication of efforts.
+It is intended to use an already working web server
+
+PHP will take the request from the remote user, put the request information into a MYSQL 
+database, then a python script will be ran to start a wget or cURL instance.
+
+The python script will manage the downloading instances to try and effectively manage the
+downloads to maximize the network usage, while still allowing users to use the network.
+
+A git repo will be the source control for this project.
+
+Stage 1:
+	
+	Get the initial stuff working.
+	
+	index.php
+		bare essentails to work
+	upload.php
+		Send a system command to start python script
+	fdlmMySQL database
+		3 table
+			1: file internet statistics
+			2: download queue
+			3: file local statistics
+	python script
+		System call to wget
+	
+	To be complete with stage 1 a successful test of a remote user to the home server must be 
+	performed with a file of > 300 
+
+later Stages:
+	
+	index.php
+		visually pleasing and use information
+	status.php
+		show current status of downloads
+			use js to update the status
+	managedDownloads.php
+		show what has been downloaded and accompanning statistics
+		allow these files to be downloaded
+	python script
+		pipe download statistics to download queue table
+		Support wget stop and resume
+		Support for cURL with stop and resume
+		Simple python priorities
+			stop a download that is less important to start one with more importants
