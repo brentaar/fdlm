@@ -2,10 +2,10 @@
 	$dBWebsite="localhost";
 	$userName = "fdlm";
 	$passWord = "woodburn";
-	$dB = "fdlmMySQL";
+	$dB = "fdlm";
 
 
-	echo "PHP on the ENGR server is working correctly.<BR><BR>";
+	echo "PHP on the $dBWebsite server is working correctly.<BR><BR>";
 
 	$connect = mysql_connect($dBWebsite, $userName, $passWord) 
 	  or die ("Unable to connect to server $dBWebsite.<br>");
