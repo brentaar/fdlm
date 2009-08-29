@@ -14,7 +14,7 @@ CREATE TABLE `fdlm`.`internetInfromation` (
 `file_internet_type` TEXT NOT NULL ,
 `file_internet_website` TEXT NOT NULL ,
 `file_internet_size` BIGINT NOT NULL ,
-`file_md5` VARCHAR( 32 ) NULL,
+`file_md5` VARCHAR( 32 ) NOT NULL,
 PRIMARY KEY ( `id` )
 ) ENGINE = MYISAM ;
 
