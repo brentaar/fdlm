@@ -45,9 +45,11 @@
 	$file_internet_location = str_replace('http://','',$file_internet_location);
 	$file_internet_location = str_replace('ftp://','',$file_internet_location);
 	echo "file_internet_location: ".$file_internet_location."<br />";
+
+	echo "<br />";
 	
 	$file_internet_name_Array = explod("/",$file_internet_location);
-	echo "file_internet_name_Array: ".$file_internet_name_Array."<br />";
+	echo "file_internet_name_Array: ".$file_internet_name_Array[0]."<br />";
 	
 	//internetinformation insert statement
 	//$sql = "INSERT INTO `fdlm`.`internetinformation` ( `id`, `file_internet_name` , `file_internet_type` , `file_internet_website` , `file_internet_size` , `file_md5`) VALUES ( \`".$sqlID."\` , \`".$file_internet_name."\`, \`".$file_internet_type."\` , \`".$file_internet_website."\` , \`".$file_internet_size."\` , \`".$file_md5."\`);";
