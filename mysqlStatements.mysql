@@ -4,7 +4,8 @@ CREATE DATABASE fdlm;
 //UNIQUE INFORAMTION
 CREATE TABLE `fdlm`.`uniqueInformation` (
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-	`file_md5` VARCHAR( 32 ) NULL
+	`file_md5` VARCHAR( 32 ) NULL,
+	`file_initial_request` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE = MYISAM ;
 
 //INTERNET INFORMATION
@@ -14,7 +15,6 @@ CREATE TABLE `fdlm`.`internetInfromation` (
 `file_internet_type` TEXT NOT NULL ,
 `file_internet_website` TEXT NOT NULL ,
 `file_internet_size` BIGINT NOT NULL ,
-`file_internet_added` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
 PRIMARY KEY ( `id` )
 ) ENGINE = MYISAM ;
 
@@ -41,4 +41,25 @@ CREATE TABLE `fdlm`.`localInfromation` (
 PRIMARY KEY ( `id` )
 ) ENGINE = MYISAM ;
 	
+	
+
+//MYQL statements
+
+//create new id
+INSERT INTO `fdlm`.`uniqueinformation` ( `id` , `file_md5`)VALUES (NULL , NULL);
+$sql = "INSERT INTO `fdlm`.`uniqueinformation` ( `id` , `file_md5`)VALUES (NULL , NULL);";
+
+//pull current id
+
+//insert internet information
+
+//insert download information
+
+//insert local infromation
+
+
+
+
+
+
 	
