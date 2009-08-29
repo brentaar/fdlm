@@ -1,6 +1,6 @@
 <?php    
 	//include file to access the MYSQL database
-	include ("common2.inc");
+	include ("common.inc");
 	include ("logMsg.php");
     
     //show php errors
@@ -13,7 +13,11 @@
 	</head>
 
 	<body class="PageBODY">
-<?
+	<font class="BodyFONT">
+<?php
+
+	echo "<br />";
+
     //Pull variables from form POST
 	$file_internet_location =  $_POST['file_internet_location'];  
 	echo "file_internet_location: ".$file_internet_location."<br />";
@@ -23,10 +27,8 @@
   	echo "file_local_location: ".$file_local_location."<br />";
   	$file_local_name =  $_POST['file_local_name'];
 	echo "file_local_name: ".$file_local_name."<br />";
-	$file_local_name_Array = explod("/",$file_local_name);
-	echo "file_local_name_Array: ".$file_local_name_Array."<br />";
 	
-	//echo "<br />";
+	echo "<br />";
 	
 	//ID insert statment
 	$sql = "INSERT INTO `fdlm`.`uniqueinformation` ( `id` , `file_initial_request`)VALUES (NULL , NULL);";
@@ -34,11 +36,18 @@
 	$sqlQuery = mysql_query($sql);
 	$sqlID = mysql_insert_id();
 	
+	logMsg(2,"SQL ID: ".$sqlID."",__file__,__line__);
+	
+	echo "<br />";
+	
 	//file_internet_location parsing 
 	echo "file_internet_location: ".$file_internet_location."<br />";
 	$file_internet_location = str_replace('http://','',$file_internet_location);
 	$file_internet_location = str_replace('ftp://','',$file_internet_location);
 	echo "file_internet_location: ".$file_internet_location."<br />";
+	
+	$file_internet_name_Array = explod("/",$file_internet_location);
+	echo "file_internet_name_Array: ".$file_internet_name_Array."<br />";
 	
 	//internetinformation insert statement
 	//$sql = "INSERT INTO `fdlm`.`internetinformation` ( `id`, `file_internet_name` , `file_internet_type` , `file_internet_website` , `file_internet_size` , `file_md5`) VALUES ( \`".$sqlID."\` , \`".$file_internet_name."\`, \`".$file_internet_type."\` , \`".$file_internet_website."\` , \`".$file_internet_size."\` , \`".$file_md5."\`);";
