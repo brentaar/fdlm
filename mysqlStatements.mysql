@@ -1,0 +1,44 @@
+//CREATE DATABASE
+CREATE DATABASE fdlm;
+
+//UNIQUE INFORAMTION
+CREATE TABLE `fdlm`.`uniqueInformation` (
+	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+	`file_md5` VARCHAR( 32 ) NULL
+) ENGINE = MYISAM ;
+
+//INTERNET INFORMATION
+CREATE TABLE `fdlm`.`internetInfromation` (
+`id` INT NOT NULL ,
+`file_internet_name` TEXT NOT NULL ,
+`file_internet_type` TEXT NOT NULL ,
+`file_internet_website` TEXT NOT NULL ,
+`file_internet_size` BIGINT NOT NULL ,
+`file_internet_added` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM ;
+
+//DOWNLOAD INFORMATION
+CREATE TABLE `fdlm`.`downloadInfromation` (
+`id` INT NOT NULL ,
+`file_averageSpeed` DOUBLE NOT NULL ,
+`file_peakSpeed` DOUBLE NOT NULL ,
+`file_startTime` DATETIME NOT NULL ,
+`file_endTime` DATETIME NOT NULL ,
+`file_totalDownloadTime` TIME NOT NULL ,
+`file_percentageComplete` FLOAT( 6 ) NOT NULL ,
+`file_status` TEXT NOT NULL ,
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM ;
+
+//LOCAL INFORMATION
+CREATE TABLE `fdlm`.`localInfromation` (
+`id` INT NOT NULL ,
+`file_local_name` TEXT NOT NULL ,
+`file_local_type` TEXT NOT NULL ,
+`file_local_size` BIGINT NOT NULL ,
+`file_local_location` TEXT NOT NULL ,
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM ;
+	
+	
