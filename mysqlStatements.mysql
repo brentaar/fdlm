@@ -4,7 +4,6 @@ CREATE DATABASE fdlm;
 //UNIQUE INFORAMTION
 CREATE TABLE `fdlm`.`uniqueInformation` (
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-	`file_md5` VARCHAR( 32 ) NULL,
 	`file_initial_request` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE = MYISAM ;
 
@@ -15,6 +14,7 @@ CREATE TABLE `fdlm`.`internetInfromation` (
 `file_internet_type` TEXT NOT NULL ,
 `file_internet_website` TEXT NOT NULL ,
 `file_internet_size` BIGINT NOT NULL ,
+`file_md5` VARCHAR( 32 ) NULL,
 PRIMARY KEY ( `id` )
 ) ENGINE = MYISAM ;
 
@@ -46,9 +46,12 @@ PRIMARY KEY ( `id` )
 //MYQL statements
 
 //create new id
-INSERT INTO `fdlm`.`uniqueinformation` ( `id` , `file_md5`)VALUES (NULL , NULL);
-$sql = "INSERT INTO `fdlm`.`uniqueinformation` ( `id` , `file_md5`)VALUES (NULL , NULL);";
-
+INSERT INTO `fdlm`.`uniqueinformation` ( `id` , `file_initial_request`)VALUES (NULL , NULL);
+//PHP create new mysql ID and pull ID
+$sql = "INSERT INTO `fdlm`.`uniqueinformation` ( `id` , `file_initial_request`)VALUES (NULL , NULL);";
+$sqlQuery = mysql_query($sql);
+$sqlID = mysql_insert_id();
+echo "this is the ID: ".$sqlID;
 //pull current id
 
 //insert internet information
