@@ -32,4 +32,13 @@
 		logMsg(0,"Could not add parsed information to internetinformation: ".$sql." ",__file__,__line__);
 	}
 	
+	//file download information parsing
+	
+	//file download information inset statement
+	
+	//file local information parsing
+	
+	//file localinformation insert
+	
+	//System call to python script
 ?>
