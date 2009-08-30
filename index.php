@@ -18,7 +18,7 @@
 	</tr>
 	<tr>
 	<td class="FieldcaptionTD"><font class="ColumnFONT">md5:*</font></td>
-	<td class="FieldcaptionTD"><input type="text" name="file_md5"></td>
+	<td class="FieldcaptionTD"><input type="text" name="file_md5" value=""></td>
 	</tr>
 	<tr>
 	<td class="FieldcaptionTD"><font class="ColumnFONT">Where:</font></td>

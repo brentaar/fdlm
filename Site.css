@@ -12,6 +12,8 @@
 .DataTD {border: 0px solid #C1D8E3; padding: 3px; background-color: #FFFFFF}
 .ErrorTD {border: 0px solid #C1D8E3; padding: 0px; color: #FF3000}
 .RecordSeparatorTD {height: 1px; color: #000000}
+.BodyFONT {font-family: Verdana,Helvetica,Arial,sans-serif; 
+           color: #FFFFFF; font-size: 11px; font-Weight: bold}
 .DataFONT {font-family: Verdana,Helvetica,Arial,sans-serif; 
            color: #000000; font-size: 11px; font-Weight: bold}
 .DataFONT2 {font-family: Verdana,Helvetica,Arial,sans-serif; 
