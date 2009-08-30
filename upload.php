@@ -124,11 +124,25 @@
 	$insert_SQL = "";
 	$sql = "";
 	
-	$file_local_name_type = explode(".",$file_local_name);
-	$file_local_name = $file_local_name_type[0];
-	$file_local_type = $file_local_name_type[1];
+	// $file_local_name_type = explode(".",$file_local_name);
 	
-	$insert_SQL_Array3[] = " `file_local_name`='".mysql_real_escape_string($file_local_name)."' ";
+	// $file_local_type = end($file_local_name_type);
+	// echo "file_local_type: ".$file_local_type."<br />";
+	
+	// $file_local_name2 = str_replace(".".$file_local_type,"",$file_local_name_type);
+	// echo "file_local_name: ".$file_local_name2."<br />";
+	
+	$file_local_name_type = $file_local_name;
+	$file_local_type = explode(".",$file_local_name_type);
+	$file_local_type = end($file_local_type);
+	echo "file_local_type: ".$file_local_type."<br />";
+		
+	$file_local_name2 = str_replace(".".$file_local_type,"",$file_local_name_type);
+	echo "file_local_name2: ".$file_local_name2."<br />";
+	
+	
+	
+	$insert_SQL_Array3[] = " `file_local_name`='".mysql_real_escape_string($file_local_name2)."' ";
 	$insert_SQL_Array3[] = " `file_local_type`='".mysql_real_escape_string($file_local_type)."' ";
 	//file location
 	
