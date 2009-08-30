@@ -106,7 +106,10 @@
 	$sql = "";
 	//This doesn't do anything, this is just for later
 	//$insert_SQL_Array2[] = $file_priority ? " `file_priority`='".$file_priority."' " : "";
-	//$insert_SQL = " , ".implode(" , ",$insert_SQL_Array2);
+	
+	$insert_SQL_Array2[] = " `file_status`='queue' ";
+	
+	$insert_SQL = " , ".implode(" , ",$insert_SQL_Array2);
 	
 	$sql = "INSERT INTO `downloadinfromation` SET ".$insert_SQL_ID.$insert_SQL." ;";
 	echo "sql: ".$sql."<br />";
