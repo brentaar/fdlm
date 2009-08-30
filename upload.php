@@ -142,8 +142,14 @@
 	if($sqlQuery == false){
 		logMsg(0,"Could not add parsed information to downloadinformation:<br />".$sql." ",__file__,__line__);
 	}
-	
+	echo "<br />";
 	//System call to python script
+	
+	//just a check to see if this works
+	$pythonCheck = system('python.exe downloadManager.py',$pcReturn);
+	
+	echo "pythonCheck: ".$pythonCheck."<br />";
+	echo "pcReturn: ".$pcReturn."<br />";
 ?>
 
 </body>
