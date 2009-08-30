@@ -28,6 +28,7 @@ CREATE TABLE `fdlm`.`downloadInfromation` (
 `file_totalDownloadTime` TIME NOT NULL ,
 `file_percentageComplete` FLOAT( 6 ) NOT NULL ,
 `file_status` TEXT NOT NULL ,
+`file_priority` INT( 1 ) NOT NULL DEFAULT '9',
 PRIMARY KEY ( `id` )
 ) ENGINE = MYISAM ;
 
