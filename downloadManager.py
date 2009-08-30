@@ -1,4 +1,6 @@
+import string
 
+print "Hello World"
 
 #Get information from mysql table
 
